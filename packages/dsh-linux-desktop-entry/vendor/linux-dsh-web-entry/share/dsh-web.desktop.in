@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=DSH Web
+GenericName=DeepSeek Harness Web GUI
+Comment=Open the DeepSeek Harness Web GUI, starting the server when it is not running
+Exec=__EXEC__
+Icon=__ICON__
+Terminal=false
+Categories=Development;
+Keywords=DSH;DeepSeek;Harness;Web;AI;
+StartupNotify=true
+StartupWMClass=Google-chrome

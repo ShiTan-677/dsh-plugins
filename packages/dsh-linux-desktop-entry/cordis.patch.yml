@@ -1,0 +1,6 @@
+# One row: the Host half declared by this package. Its Client half is declared by
+# `dsh.client` in package.json and served by the client module system, so it
+# needs no second row here. The row id is what Settings → Plugins shows.
+- insert:
+    - id: dsh-linux-desktop-entry
+      name: dsh-linux-desktop-entry

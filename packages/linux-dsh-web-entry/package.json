@@ -1,0 +1,19 @@
+{
+  "name": "linux-dsh-web-entry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "One-click entrance to the DeepSeek Harness Web GUI on Linux desktops: launcher, XDG desktop entry, optional systemd user service.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShiTan-677/dsh-plugins.git",
+    "directory": "packages/linux-dsh-web-entry"
+  },
+  "homepage": "https://github.com/ShiTan-677/dsh-plugins/tree/main/packages/linux-dsh-web-entry#readme",
+  "bugs": {
+    "url": "https://github.com/ShiTan-677/dsh-plugins/issues"
+  },
+  "scripts": {
+    "verify": "node scripts/verify-kit.mjs"
+  }
+}

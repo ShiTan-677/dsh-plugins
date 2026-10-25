@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Desktop entry">
+  <!-- Authored for this project: no third-party artwork is vendored. -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#247bbf"/>
+  <rect x="13" y="15" width="28" height="20" rx="4" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <path d="M13 21.5h28" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="18" cy="18.2" r="1.4" fill="#ffffff"/>
+  <circle cx="23" cy="18.2" r="1.4" fill="#ffffff"/>
+  <path d="M33 43 45 31" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M36.5 31H45v8.5" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -6,9 +6,11 @@ Self-maintained [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harne
 
 | Package | What it does | Form |
 | --- | --- | --- |
-| [`dsh-plugin-mark-unread`](packages/dsh-plugin-mark-unread) | Adds a manual "mark as unread" action to workspace session rows, with a self-retiring mechanism for when upstream ships it | host + Web UI |
+| [`dsh-plugin-mark-unread`](packages/dsh-plugin-mark-unread) | Adds a manual "mark as unread" action to workspace session rows, with a self-retiring mechanism for when upstream ships it | host + Web UI, published to npm |
+| [`dsh-linux-desktop-entry`](packages/dsh-linux-desktop-entry) | Puts the Linux desktop entrance under the harness's own controls: Settings page, agent tool and `/desktop-entry` command | host + Web UI, private (installed from this repo) |
+| [`linux-dsh-web-entry`](packages/linux-dsh-web-entry) | The launcher kit the plugin drives: app-menu entry, trusted icon, optional `systemd --user` service | shell kit, not a DSH plugin |
 
-Coming next: `linux-dsh-web-entry` + `dsh-linux-desktop-entry` as a pair (the launcher kit and the plugin that drives it).
+The plugin ships a copy of the kit so a profile install stays self-contained; `npm run verify` fails if that copy drifts from `packages/linux-dsh-web-entry`.
 
 ## Rules every package follows
 

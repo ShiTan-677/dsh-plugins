@@ -1,0 +1,50 @@
+{
+  "name": "dsh-linux-desktop-entry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Install, repair or remove the Linux desktop entrance for the DeepSeek Harness Web GUI from inside the harness, and open the GUI in an app window.",
+  "license": "MIT",
+  "type": "module",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/",
+    "tools/selftest-plugin.mjs",
+    "vendor/",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShiTan-677/dsh-plugins.git",
+    "directory": "packages/dsh-linux-desktop-entry"
+  },
+  "homepage": "https://github.com/ShiTan-677/dsh-plugins/tree/main/packages/dsh-linux-desktop-entry#readme",
+  "bugs": {
+    "url": "https://github.com/ShiTan-677/dsh-plugins/issues"
+  },
+  "scripts": {
+    "verify": "node scripts/check-vendor-sync.mjs"
+  }
+}
