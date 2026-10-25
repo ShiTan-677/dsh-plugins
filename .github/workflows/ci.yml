@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# 顶层收紧到空，权限只在 job 级按需授予（最小权限原则）。
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: verify (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        # 与各包 engines（^22.19.0 || >=24.0.0）保持一致。
+        # DSH 桌面版随附 Node 24；22 是仍在维护的 LTS。
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 校验类任务不需要把 token 留在 git config 里供后续步骤使用。
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          # 刻意不启用缓存：本仓库零依赖，没有 lockfile 可缓存。
+
+      # 根 verify 逐个包转发到自己的 verify 脚本：产物一致性检查 + 全量 node:test。
+      # 新增包只要提供 verify 脚本就会被纳入，不需要改这个 workflow。
+      - name: 校验所有包
+        run: npm run verify

@@ -1,0 +1,5 @@
+# 统一换行符为 LF，避免 Windows 贡献者引入 CRLF 噪音。
+* text=auto eol=lf
+
+# 生成物：让 GitHub 折叠 diff，并抑制 Dependabot 的噪音告警。
+lib/client.js linguist-generated=true

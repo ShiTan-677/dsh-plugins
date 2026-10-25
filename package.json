@@ -1,0 +1,11 @@
+{
+  "name": "dsh-plugins",
+  "private": true,
+  "description": "Self-maintained DeepSeek Harness plugins and their companion tools.",
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "verify": "node scripts/verify-all.mjs"
+  }
+}

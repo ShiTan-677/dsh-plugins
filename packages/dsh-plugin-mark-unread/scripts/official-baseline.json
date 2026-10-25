@@ -1,0 +1,32 @@
+{
+  "runtime": "0.2.0-rc.2",
+  "peerRange": ">=0.1.7-rc.2 <0.3.0-0",
+  "note": "runtime/pins 是本插件逐契约验证过的 DSH 运行时与官方包版本；peerRange 是 package.json 声明的 peer 区间。升级 DSH 后：先按 runtime 验收，通过再把 runtime/pins 推到新版本；只有跨出 peerRange 上界（如 0.3）才需要动 peerRange。peerRange 故意跨 minor——`^0.1.x` 在 0.x 语义下等于 `>=0.1.x <0.2.0`，精确锁死等于「DSH 每发一个 minor 就整包退场」，两者都会让插件在升级时无故消失（2026-09-29 的 0.1.7-rc.2 → 0.2.0-rc.2 事故）。tests/artifact.test.mjs 强制 peer==peerRange、peerRange 覆盖 runtime、且跨 minor。",
+  "pins": {
+    "@deepseek-ai/dsh-api-session-controller": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-client-ui-session": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-client-ui-workspace": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-web-frontend": "0.2.0-rc.2"
+  },
+  "peerPackages": [
+    "@deepseek-ai/dsh-api-session-controller",
+    "@deepseek-ai/dsh-client-ui-session",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-workspace"
+  ],
+  "strongTokens": [
+    "markUnread",
+    "markAsUnread",
+    "markSessionUnread",
+    "setUnread",
+    "toggleUnread",
+    "setCompletionUnread"
+  ],
+  "weakTokens": [
+    "unread",
+    "未读"
+  ],
+  "ignoreLinePattern": "unreadable|未读入|unread policy",
+  "scanFilePattern": "(^|/)README(\\.[a-z]{2})?\\.md$|\\.d\\.ts$|(^|/)client\\.js$|(^|/)dist/assets/[^/]+\\.js$"
+}

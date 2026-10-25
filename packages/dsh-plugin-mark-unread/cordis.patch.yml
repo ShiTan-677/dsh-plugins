@@ -1,0 +1,13 @@
+# dsh-plugin-mark-unread 的 bundle patch。
+#
+# 插件只在 profile 的组合里加一行 Loader entry：
+#   - Node half（lib/index.js）不做任何事，只满足 bundle 插件契约；
+#   - 浏览器 half（lib/client.js）由 package.json 的 dsh.client 声明，
+#     由 client 内核组合进页面，注册 sidebar.session.row.leading 与
+#     sidebar.workspaces.session.menu.item 两个槽位。
+#
+# 卸载 = 在 profile 里移除本 bundle（plugin_manager remove_bundle / dsh plugin），
+# 本文件随之不再被读取，不残留任何 id 定向覆盖行。
+- insert:
+    - id: dsh-plugin-mark-unread
+      name: 'dsh-plugin-mark-unread'
